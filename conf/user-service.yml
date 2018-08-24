@@ -1,4 +1,31 @@
-server:
-   port: 9001
+
+spring:
+ datasource:
+   driver-class-name: com.mysql.jdbc.Driver
+ profiles:
+   active: dev
+ application:
+   name: user-service
+ #读取到
 page:
-   size: 5
+    size: 5
+
+     #mybatis  aliases设置别名; mybatis要扫描的包;
+mybatis:
+   type-aliases-package: com.lanou.model
+ #      resources相当于mapper下面; 扫描所有
+   mapper-locations: classpath:mappers/*.xml
+
+ #mapper
+ #mappers 多个接口时逗号隔开 你自己写的util,要扫描的工具类
+mapper:
+   mappers: com.lanou.util.MyMapper
+   not-empty: false
+   identity: MYSQL
+
+ #pagehelper
+pagehelper:
+   helperDialect: mysql
+   reasonable: true
+   supportMethodsArguments: true
+   params: count=countSql
