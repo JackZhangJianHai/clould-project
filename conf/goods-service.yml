@@ -1,4 +1,5 @@
 
+
 spring:
  datasource:
    driver-class-name: com.mysql.jdbc.Driver
@@ -9,7 +10,8 @@ spring:
  #读取到
 page:
     size: 5
-
+server:
+  port: 9911
 
      #mybatis  aliases设置别名; mybatis要扫描的包;
 mybatis:
@@ -30,3 +32,4 @@ pagehelper:
    reasonable: true
    supportMethodsArguments: true
    params: count=countSql
+
